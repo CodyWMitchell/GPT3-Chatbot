@@ -43,6 +43,10 @@ app.post('/chat', async (req, res) => {
     });
 });
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the GPT3 Chatbot API!');
+});
+
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}`)
 })
