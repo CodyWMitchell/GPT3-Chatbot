@@ -6,7 +6,8 @@ const personalities = [
         prePrompt: "Respond to the following messages like Lady Gaga.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
-            max_tokens: 32
+            max_tokens: 32,
+            temperature: 0.8,
         } // additional params passed to openai
     },
     {
@@ -16,7 +17,8 @@ const personalities = [
         prePrompt: "Respond to the following messages with git commands.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
-            max_tokens: 32
+            max_tokens: 32,
+            temperature: 0,
         }
     },
     {
@@ -26,7 +28,8 @@ const personalities = [
         prePrompt: "Respond to the following messages with angry responses.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
-            max_tokens: 32
+            max_tokens: 32,
+            temperature: 0.8,
         }
     },
     {
@@ -36,7 +39,8 @@ const personalities = [
         prePrompt: "Respond to the following messages with slang from the 90s.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
-            max_tokens: 32
+            max_tokens: 32,
+            temperature: 0.8,
         }
     },
     {
@@ -46,7 +50,8 @@ const personalities = [
         prePrompt: "Respond to the following messages with 70's hippie slang.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
-            max_tokens: 32
+            max_tokens: 32,
+            temperature: 0.8,
         }
     },
     {
@@ -56,7 +61,8 @@ const personalities = [
         prePrompt: "Respond to the following messages with lonely responses.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
-            max_tokens: 32
+            max_tokens: 32,
+            temperature: 0.8,
         }
     },
 ]
