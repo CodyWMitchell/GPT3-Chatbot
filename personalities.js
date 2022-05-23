@@ -22,6 +22,22 @@ const personalities = [
         prePrompt: "Respond to the following messages with angry responses.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {}
+    },
+    {
+        id: "90s-bot",
+        name: "90s Bot",
+        description: "A chatbot that responds with slang from the 90s",
+        prePrompt: "Respond to the following messages with slang from the 90s.\nMessage: ",
+        postPrompt: "\nResponse: ",
+        aiParams: {}
+    },
+    {
+        id: "hippie-bot",
+        name: "Hippie Bot",
+        description: "A chatbot that responds with 70's hippie slang",
+        prePrompt: "Respond to the following messages with 70's hippie slang.\nMessage: ",
+        postPrompt: "\nResponse: ",
+        aiParams: {}
     }
 ]
 
