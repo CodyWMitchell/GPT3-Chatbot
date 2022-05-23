@@ -43,10 +43,21 @@ app.post('/chat', async (req, res) => {
     });
 });
 
+app.get('/personalities', (req, res) => {
+    // return a list of the personalities with id, name, and description for each
+    res.json(personalities.map(
+        p => ({
+            id: p.id,
+            name: p.name,
+            description: p.description
+        })
+    ));
+});
+
 app.get('/', (req, res) => {
     res.send('Welcome to the GPT3 Chatbot API!');
 });
 
 app.listen(port, () => {
     console.log(`Listening at http://localhost:${port}`)
-})
+});
