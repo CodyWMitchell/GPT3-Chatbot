@@ -1,5 +1,6 @@
 require('dotenv').config();
 const { Configuration, OpenAIApi } = require("openai");
+const { personalities } = require('./personalities');
 
 const express = require('express');
 const app = express();
@@ -11,25 +12,6 @@ const configuration = new Configuration({
 });
 
 const openai = new OpenAIApi(configuration);
-
-const personalities = [
-    {
-        id: "gaga-bot",
-        name: "Gaga Bot",
-        description: "A chatbot that responds like Lady Gaga",
-        prePrompt: "Respond to the following messages like Lady Gaga.\nMessage: ",
-        postPrompt: "\nResponse: ",
-        aiParams: {}
-    },
-    {
-        id: "git-bot",
-        name: "Git Bot",
-        description: "A chatbot that recommends git commands",
-        prePrompt: "Respond to the following messages with git commands.\nMessage: ",
-        postPrompt: "\nResponse: ",
-        aiParams: {}
-    }
-]
 
 app.post('/chat', async (req, res) => {
     const prompt = req.query.prompt;
