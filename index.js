@@ -15,7 +15,7 @@ app.use(rateLimit({ // Limit to 30 requests per minute
     }
 }));
 
-app.use('/api',(req, res, next) => {
+app.use('/api/chat',(req, res, next) => {
     if (req.headers.authorization !== process.env.AUTH_TOKEN) {
         res.status(401).send('Unauthorized');
         return;
