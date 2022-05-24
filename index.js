@@ -9,13 +9,13 @@ const port = process.env.PORT || 3000;
 
 app.use(rateLimit({ // Limit to 30 requests per minute
     windowMs: 6000,
-    max: 30s,
+    max: 30,
     message: {
         response: "Too many requests. Please try again later."
     }
 }));
 
-app.use((req, res, next) => {
+app.use('/api',(req, res, next) => {
     if (req.headers.authorization !== process.env.AUTH_TOKEN) {
         res.status(401).send('Unauthorized');
         return;
@@ -30,7 +30,7 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration);
 
-app.post('/chat', async (req, res) => {
+app.post('/api/chat', async (req, res) => {
     const prompt = req.query.prompt;
     if (!prompt) {
         res.status(400).send('Missing prompt parameter');
@@ -60,7 +60,7 @@ app.post('/chat', async (req, res) => {
     });
 });
 
-app.get('/personalities', (req, res) => {
+app.get('/api/personalities', (req, res) => {
     // return a list of the personalities with id, name, and description for each
     res.json(personalities.map(
         p => ({
