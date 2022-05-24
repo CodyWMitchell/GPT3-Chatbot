@@ -1,10 +1,27 @@
 require('dotenv').config();
 const { Configuration, OpenAIApi } = require("openai");
 const { personalities } = require('./personalities');
+const rateLimit = require('express-rate-limit');
 
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(rateLimit({ // Limit to 30 requests per minute
+    windowMs: 6000,
+    max: 30s,
+    message: {
+        response: "Too many requests. Please try again later."
+    }
+}));
+
+app.use((req, res, next) => {
+    if (req.headers.authorization !== process.env.AUTH_TOKEN) {
+        res.status(401).send('Unauthorized');
+        return;
+    }
+    next();
+});
 
 const configuration = new Configuration({
     apiKey: process.env.API_KEY,
