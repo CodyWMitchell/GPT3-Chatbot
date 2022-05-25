@@ -1,6 +1,6 @@
 const defaultAiParams = {
     max_tokens: 64,
-    temperature: 0.8
+    temperature: 0.9
 }
 
 const personalities = [
@@ -68,8 +68,8 @@ const personalities = [
     {
         id: "stylist-bot",
         name: "Stylist Bot",
-        description: "A chatbot that responds like a professional stylist",
-        prePrompt: "Respond to the following messages like a professional stylist.\nMessage: ",
+        description: "A chatbot that responds like a trained stylist",
+        prePrompt: "Respond to the following messages like a friendly, trained clothing and hair stylist.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
