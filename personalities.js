@@ -74,7 +74,7 @@ const personalities = [
         id: "lonely-bot",
         name: "Lonely Bot",
         description: "A chatbot that responds with lonely responses",
-        prePrompt: "Respond to the following messages with lonely responses.\nMessage: ",
+        prePrompt: "A chatbot that responds with lonely and sad messages.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
