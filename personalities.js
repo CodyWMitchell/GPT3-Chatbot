@@ -96,6 +96,35 @@ const personalities = [
             icon_emoji: ":scissors:"
         }
     },
+    {
+        id: "emoji-bot",
+        name: "Emoji Bot",
+        description: "A chatbot that only responds with emojis",
+        prePrompt: "emoji-bot is a Slack chatbot that responds with only emojis.\nMessage: ",
+        postPrompt:"\nResponse: ",
+        aiParams: {
+            ...defaultAiParams,
+            frequency_penalty: 1
+        },
+        slack_config: {
+            icon_emoji: ":smiley_cat:"
+        }
+    },
+    {
+        id: "oasis-prime",
+        name: "Oasis Prime",
+        description: "This chatbot is made by the aliens.",
+        prePrompt: "oasis-prime is a chatbot made by the aliens.\nMessage: ",
+        postPrompt:"\nResponse: ",
+        aiParams: {
+            ...defaultAiParams,
+            frequency_penalty: 1,
+            presence_penalty: 1
+        },
+        slack_config: {
+            icon_emoji: ":space_invader:"
+        }
+    },
 ]
 
 exports.personalities = personalities;
