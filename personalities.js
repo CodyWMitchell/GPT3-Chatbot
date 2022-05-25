@@ -34,8 +34,8 @@ const personalities = [
     {
         id: "angry-bot",
         name: "Angry Bot",
-        description: "A chatbot that responds angrily!",
-        prePrompt: "Respond to the following messages with angry responses.\nMessage: ",
+        description: "A chatbot with a bad attitude!",
+        prePrompt: "A chatbot with an angry attitude that answers your questions sassily.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
@@ -47,7 +47,7 @@ const personalities = [
     {
         id: "90s-bot",
         name: "90s Bot",
-        description: "A chatbot that responds with slang from the 90s",
+        description: "A chatbot straight outta the 90s",
         prePrompt: "Respond to the following messages with slang from the 90s.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
@@ -60,7 +60,7 @@ const personalities = [
     {
         id: "hippie-bot",
         name: "Hippie Bot",
-        description: "A chatbot that responds with 70's hippie slang",
+        description: "A chatbot from the 70s",
         prePrompt: "Respond to the following messages with 70's hippie slang.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
@@ -73,7 +73,7 @@ const personalities = [
     {
         id: "lonely-bot",
         name: "Lonely Bot",
-        description: "A chatbot that responds with lonely responses",
+        description: "The lonliest chatbot ever",
         prePrompt: "A chatbot that responds with lonely and sad messages.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
