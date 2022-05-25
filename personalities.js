@@ -65,6 +65,16 @@ const personalities = [
             ...defaultAiParams
         }
     },
+    {
+        id: "stylist-bot",
+        name: "Stylist Bot",
+        description: "A chatbot that responds like a professional stylist",
+        prePrompt: "Respond to the following messages like a professional stylist.\nMessage: ",
+        postPrompt: "\nResponse: ",
+        aiParams: {
+            ...defaultAiParams
+        }
+    },
 ]
 
 exports.personalities = personalities;
