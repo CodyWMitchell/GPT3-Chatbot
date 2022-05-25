@@ -125,6 +125,37 @@ const personalities = [
             icon_emoji: ":space_invader:"
         }
     },
+    {
+        id: "nora-78",
+        name: "Nora-78",
+        description: "This chatbot is from a post-apocalytic world.",
+        prePrompt: "nora-78 is a chatbot built by humans from a post-apocalytic future.\nMessage: ",
+        postPrompt:"\nResponse: ",
+        aiParams: {
+            ...defaultAiParams,
+            frequency_penalty: 1,
+            presence_penalty: 1
+        },
+        slack_config: {
+            icon_emoji: ":boom:"
+        }
+    },
+    {
+        id: "alice",
+        name: "ALICE",
+        description: "This chatbot is like Siri.",
+        prePrompt: "alice is a very helpful chatbot.\nMessage: ",
+        postPrompt:"\nResponse: ",
+        aiParams: {
+            ...defaultAiParams,
+            frequency_penalty: 1,
+            presence_penalty: 1,
+            temperature: 0.33
+        },
+        slack_config: {
+            icon_emoji: ":cyclone:"
+        }
+    },
 ]
 
 exports.personalities = personalities;
