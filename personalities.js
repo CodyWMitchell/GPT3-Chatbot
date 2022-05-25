@@ -12,7 +12,10 @@ const personalities = [
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
-        } // additional params passed to openai
+        }, // additional params passed to openai
+        slack_config: {
+            icon_url: "https://raw.githubusercontent.com/tahmidefaz/everybotty-slackbot/main/icons/gaga-emoji.jpeg"
+        }
     },
     {
         id: "git-bot",
@@ -23,6 +26,9 @@ const personalities = [
         aiParams: {
             ...defaultAiParams,
             temperature: 0
+        },
+        slack_config: {
+            icon_url: "https://raw.githubusercontent.com/tahmidefaz/everybotty-slackbot/main/icons/git-emoji.jpeg"
         }
     },
     {
@@ -33,6 +39,9 @@ const personalities = [
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
+        },
+        slack_config: {
+            icon_emoji: ":angry:"
         }
     },
     {
@@ -43,6 +52,9 @@ const personalities = [
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
+        },
+        slack_config: {
+            icon_emoji: ":pager:"
         }
     },
     {
@@ -53,6 +65,9 @@ const personalities = [
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
+        },
+        slack_config: {
+            icon_emoji: ":call_me_hand:"
         }
     },
     {
@@ -63,6 +78,9 @@ const personalities = [
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
+        },
+        slack_config: {
+            icon_emoji: ":disappointed:"
         }
     },
     {
@@ -73,6 +91,9 @@ const personalities = [
         postPrompt: "\nResponse: ",
         aiParams: {
             ...defaultAiParams
+        },
+        slack_config: {
+            icon_emoji: ":scissors:"
         }
     },
 ]

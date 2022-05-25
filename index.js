@@ -91,7 +91,8 @@ app.get('/api/personalities', (req, res) => {
         p => ({
             id: p.id,
             name: p.name,
-            description: p.description
+            description: p.description,
+            slack_config: p.slack_config
         })
     ));
 });
