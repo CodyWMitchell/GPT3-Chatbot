@@ -18,6 +18,7 @@ const contentFilter = async (response) => {
     return res.data.choices[0].text;
 }
 
+// GET /api/personalities
 const getPersonalities = (req, res) => {
     res.json(personalities.map(
         p => ({
@@ -30,6 +31,7 @@ const getPersonalities = (req, res) => {
     return;
 }
 
+// POST /api/chat
 const postChat = (req, res) => {
     if (req.headers.authorization !== process.env.AUTH_TOKEN) {
         res.status(401).send('Unauthorized');
