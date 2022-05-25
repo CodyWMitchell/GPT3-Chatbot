@@ -14,7 +14,7 @@ const personalities = [
             ...defaultAiParams
         }, // additional params passed to openai
         slack_config: {
-            icon_url: "https://raw.githubusercontent.com/tahmidefaz/everybotty-slackbot/main/icons/gaga-emoji.jpeg"
+            icon_url: "https://raw.githubusercontent.com/CodyWMitchell/GPT3-Chatbot-API/main/icons/gaga-emoji.jpeg"
         }
     },
     {
@@ -28,7 +28,7 @@ const personalities = [
             temperature: 0
         },
         slack_config: {
-            icon_url: "https://raw.githubusercontent.com/tahmidefaz/everybotty-slackbot/main/icons/git-emoji.jpeg"
+            icon_url: "https://raw.githubusercontent.com/CodyWMitchell/GPT3-Chatbot-API/main/icons/git-emoji.jpeg"
         }
     },
     {
