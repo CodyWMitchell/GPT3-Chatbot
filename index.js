@@ -25,15 +25,34 @@ app.use('/api/chat',(req, res, next) => {
 
 const configuration = new Configuration({
     apiKey: process.env.API_KEY,
-    engineId: ""
 });
 
 const openai = new OpenAIApi(configuration);
+
+const contentFilter = async (response) => {
+    prompt = `<|endoftext|>${response}\n--\nLabel:`
+    const res = await openai.createCompletion("content-filter-alpha", {
+        prompt,
+        temperature: 0,
+        max_tokens: 1,
+        top_p: 0,
+        logprobs: 10
+    })
+    return res.data.choices[0].text;
+}
 
 app.post('/api/chat', async (req, res) => {
     const prompt = req.query.prompt;
     if (!prompt) {
         res.status(400).send('Missing prompt parameter');
+        return;
+    }
+
+    const contentLabel = await contentFilter(prompt);
+    if (contentLabel !== '0') {
+        res.json({
+            response: 'Sorry, I can\'t respond to that kind of message!'
+        })
         return;
     }
 
@@ -50,13 +69,19 @@ app.post('/api/chat', async (req, res) => {
             prompt: personality.prePrompt + prompt + personality.postPrompt,
             ...personality.aiParams
         }
-    ).then(response => {
+    ).then(async (response) => {
         responseText = response.data.choices[0].text;
         responseText = responseText.replace(/^\n+/, '');
+
+        const contentLabel = await contentFilter(responseText);
+        if (contentLabel !== '0') {
+            responseText = '[REDACTED]';
+        }
 
         res.json({
             response: responseText
         });
+        return;
     });
 });
 
@@ -72,7 +97,7 @@ app.get('/api/personalities', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the GPT3 Chatbot API!');
+    res.send('Welcome to the EveryBotty Chatbot API!');
 });
 
 app.listen(port, () => {
