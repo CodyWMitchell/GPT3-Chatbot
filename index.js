@@ -49,7 +49,7 @@ app.post('/api/chat', async (req, res) => {
     }
 
     const contentLabel = await contentFilter(prompt);
-    if (contentLabel !== '0') {
+    if (contentLabel === '2') {
         res.json({
             response: 'Sorry, I can\'t respond to that kind of message!'
         })
@@ -74,7 +74,7 @@ app.post('/api/chat', async (req, res) => {
         responseText = responseText.replace(/^\n+/, '');
 
         const contentLabel = await contentFilter(responseText);
-        if (contentLabel !== '0') {
+        if (contentLabel === '2') {
             responseText = '[REDACTED]';
         }
 
