@@ -3,7 +3,9 @@ Part of a Hackathon project
 
 ## ENVIRONMENT VARIABLES
 To run, this project requires as `.env` file with following variables:
+
 `API_KEY` Your OpenAI GPT-3 KEY
+
 `AUTH_TOKEN` A string required to be passed with each request in the `Authorization` header
 
 ## Request format
