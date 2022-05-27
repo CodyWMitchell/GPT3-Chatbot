@@ -41,7 +41,7 @@ const personalities = [
             ...defaultAiParams
         },
         slack_config: {
-            icon_emoji: ":angry:"
+            icon_emoji: ":rage:"
         }
     },
     {
@@ -73,7 +73,7 @@ const personalities = [
     {
         id: "lonely-bot",
         name: "Lonely Bot",
-        description: "The lonliest chatbot ever",
+        description: "The loneliest chatbot ever",
         prePrompt: "A chatbot that responds with lonely and sad messages.\nMessage: ",
         postPrompt: "\nResponse: ",
         aiParams: {
@@ -143,7 +143,7 @@ const personalities = [
     {
         id: "alice",
         name: "ALICE",
-        description: "This chatbot is like Siri.",
+        description: "This chatbot is like Siri... probably smarter!",
         prePrompt: "alice is a very helpful chatbot.\nMessage: ",
         postPrompt:"\nResponse: ",
         aiParams: {
