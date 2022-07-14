@@ -61,7 +61,7 @@ const postChat = (req, res) => {
         responseText = responseText.replace(/^\n+/, '');
 
         // check if the user sent noFilter: true
-        if (!req.query.noFilter) {
+        if (req.query.noFilter!=='true') {
             const contentLabel = await contentFilter(responseText);
             if (contentLabel === '2') {
                 responseText = '[REDACTED]';
