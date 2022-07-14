@@ -60,9 +60,12 @@ const postChat = (req, res) => {
         let responseText = response.data.choices[0].text;
         responseText = responseText.replace(/^\n+/, '');
 
-        const contentLabel = await contentFilter(responseText);
-        if (contentLabel === '2') {
-            responseText = '[REDACTED]';
+        // check if the user sent noFilter: true
+        if (!req.query.noFilter) {
+            const contentLabel = await contentFilter(responseText);
+            if (contentLabel === '2') {
+                responseText = '[REDACTED]';
+            }
         }
 
         res.json({
